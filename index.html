@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Regular Expressions in JavaScript</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background-image="../examples/assets/background.png">
+          <img src="./examples/assets/picture.jpg" />
+        </section>
+
+        <section data-background-image="../examples/assets/background.png">
+          <h1>Regular Expressions in JavaScript</h1>
+          <p>Supercharge your string manipulation skills!</p>
+        </section>
+
+        <section data-background-image="../examples/assets/background.png">
+          <h2>What is a Regular Expression?</h2>
+          <p>
+            A sequence of characters that form a search pattern, used for string
+            matching and manipulation.
+          </p>
+          <pre><code data-trim data-noescape>
+            const pattern = /hello/;
+          </code></pre>
+        </section>
+
+        <section data-background-image="../examples/assets/background.png">
+          <h2>Creating a RegEx</h2>
+          <pre><code data-trim data-noescape>
+            // Literal notation
+            const regex1 = /abc/;
+
+            // Constructor
+            const regex2 = new RegExp("abc");
+          </code></pre>
+        </section>
+
+        <section data-background-image="../examples/assets/background.png">
+          <h2>RegEx Flags</h2>
+          <ul>
+            <li><code>g</code> – global search</li>
+            <li><code>i</code> – case-insensitive</li>
+            <li><code>m</code> – multiline mode</li>
+          </ul>
+          <pre><code data-trim data-noescape>
+            const regex = /hello/gi;
+          </code></pre>
+        </section>
+
+        <section data-background-image="../examples/assets/background.png">
+          <h2>Common Patterns</h2>
+          <ul>
+            <li><code>.</code> – Any character</li>
+            <li><code>\d</code> – Digit</li>
+            <li><code>\w</code> – Word character</li>
+            <li><code>\s</code> – Whitespace</li>
+            <li><code>+</code> – One or more</li>
+            <li><code>*</code> – Zero or more</li>
+            <li><code>?</code> – Optional</li>
+            <li><code>^</code> – Start of string</li>
+            <li><code>$</code> – End of string</li>
+          </ul>
+        </section>
+
+        <section data-background-image="../examples/assets/background.png">
+          <h2>Testing Patterns</h2>
+          <pre><code data-trim data-noescape>
+            const str = "Hello world!";
+            const pattern = /world/;
+            console.log(pattern.test(str)); // true
+          </code></pre>
+        </section>
+
+        <section data-background-image="../examples/assets/background.png">
+          <h2>Extracting Matches</h2>
+          <pre><code data-trim data-noescape>
+            const str = "Email me at hello@example.com";
+            const pattern = /\S+@\S+\.\S+/;
+            console.log(str.match(pattern)); // ['hello@example.com']
+          </code></pre>
+        </section>
+
+        <section data-background-image="../examples/assets/background.png">
+          <h2>Replacing Text</h2>
+          <pre><code data-trim data-noescape>
+            const str = "I like cats";
+            const newStr = str.replace(/cats/, "dogs");
+            console.log(newStr); // 'I like dogs'
+          </code></pre>
+        </section>
+
+        <section data-background-image="../examples/assets/background.png">
+          <h2>Advanced Example</h2>
+          <pre><code data-trim data-noescape>
+            const url = "https://example.com/page/123";
+            const pattern = /\/page\/(\d+)/;
+            const match = url.match(pattern);
+            console.log(match[1]); // 123
+          </code></pre>
+        </section>
+
+        <section data-background-image="../examples/assets/background.png">
+          <h2>Real-World Use Cases</h2>
+          <ul>
+            <li>Form validation (email, phone, etc.)</li>
+            <li>Search & highlight keywords</li>
+            <li>Data cleanup</li>
+            <li>Parsing logs or URLs</li>
+          </ul>
+        </section>
+
+        <section data-background-image="../examples/assets/background.png">
+          <h2>Helpful Tools</h2>
+          <ul>
+            <li>
+              <a href="https://regex101.com/" target="_blank">regex101.com</a>
+            </li>
+            <li>
+              <a href="https://regexr.com/" target="_blank">regexr.com</a>
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions"
+                target="_blank"
+                >MDN Docs</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <section data-background-image="../examples/assets/background.png">
+          <h2>Conclusion</h2>
+          <p>
+            Practice regularly, keep patterns simple, and use online tools to
+            refine your RegEx skills.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
